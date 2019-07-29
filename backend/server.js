@@ -6,6 +6,8 @@ var utils = require('./utils');
 
 var t = require('tcomb');
 
+var cors = require('cors');
+
 // Constants
 const PORT = 8080;
 const HOST = '127.0.0.1';
@@ -18,8 +20,27 @@ var api = require('./characters')({
 	, privateKey: PRIVATE_KEY
 }, utils);
 
+
 // App
 const app = express();
+
+var allowedOrigins = ['http://localhost:3000','http://localhost:4200'];
+
+app.use(cors({
+	origin: function(origin, callback){
+	  // allow requests with no origin 
+	  // (like mobile apps or curl requests)
+	  if(!origin) return callback(null, true);
+	  if(allowedOrigins.indexOf(origin) === -1){
+		var msg = 'The CORS policy for this site does not ' +
+				  'allow access from the specified Origin.';
+		return callback(new Error(msg), false);
+	  }
+	  return callback(null, true);
+	}
+  }));
+
+
 
 // hello to check server
 app.get('/', (req, res) => {
