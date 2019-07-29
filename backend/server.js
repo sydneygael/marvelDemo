@@ -31,7 +31,7 @@ app.get('/characters', (req, res) => {
 
 	// for pagination
 	var offset = req.query.offset;
-	var limit = 20 ;
+	var limit = 25 || req.query.limit;
 
 	api.findAll(limit, offset, function (err, results) {
 		if (err) {
