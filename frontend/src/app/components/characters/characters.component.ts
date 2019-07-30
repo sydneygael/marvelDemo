@@ -40,6 +40,7 @@ export class CharactersComponent implements OnInit {
       resp => {
         this.personnages = resp.data;
         this.meta = resp.meta ;
+        this.length = this.meta.total;
       }
     );
 
