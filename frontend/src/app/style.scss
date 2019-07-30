@@ -1,6 +1,19 @@
 mat-sidenav-container, mat-sidenav-content, mat-sidenav {
     height: 100%;
 }
+
+col-sm-4 {
+
+    :host(.mat-card) {
+        transition: box-shadow 280ms cubic-bezier(.4,0,.2,1);
+        display: block;
+        position: relative;
+        padding: 16px;
+        border-radius: 4px;
+        margin : 10px;
+    }
+}
+
  
 mat-sidenav {
     width: 250px;

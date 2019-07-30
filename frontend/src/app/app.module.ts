@@ -16,12 +16,14 @@ import { CharactersComponent } from './components/characters/characters.componen
 import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    CharactersComponent
+    CharactersComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
