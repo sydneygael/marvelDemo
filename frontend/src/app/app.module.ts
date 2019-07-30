@@ -15,6 +15,7 @@ import { MatListModule } from '@angular/material/list';
 import { CharactersComponent } from './components/characters/characters.component';
 import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import {MatCardModule} from '@angular/material/card';
     MatPaginatorModule,
     MatListModule,
     MatCardModule,
+    MatGridListModule,
     HttpClientModule
   ],
   providers: [HttpClientModule],

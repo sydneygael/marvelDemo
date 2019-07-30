@@ -25,6 +25,7 @@ export class CharactersComponent implements OnInit {
   constructor(private api : CharactersService) { }
 
   ngOnInit() {
+    this.getServerData(this.pageEvent);
   }
 
   public getServerData(event?:PageEvent){
@@ -40,6 +41,10 @@ export class CharactersComponent implements OnInit {
     );
 
     return event;
+  }
+
+  getImage (pers: Character) : string {
+    return pers.thumbnail.path + '.' + pers.thumbnail.extension;
   }
 
 }

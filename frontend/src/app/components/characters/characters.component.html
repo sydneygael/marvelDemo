@@ -1,16 +1,16 @@
 <div *ngIf="pageEvent">
-    <mat-card class="example-card">
+  <mat-grid-list cols="4" rowHeight = "400px">
+    <mat-grid-tile *ngFor="let pers of personnages">
+      <mat-card  class="example-card">
         <mat-card-header>
           <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-title>{{pers.name}}</mat-card-title>
           <mat-card-subtitle>Dog Breed</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <img mat-card-image src="{{ getImage(pers)}}" alt="Photo of">
         <mat-card-content>
           <p>
-            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-            bred for hunting.
+            {{pers.description}}
           </p>
         </mat-card-content>
         <mat-card-actions>
@@ -18,7 +18,10 @@
           <button mat-button>SHARE</button>
         </mat-card-actions>
       </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>
 
-<mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" (page)="pageEvent = getServerData($event)">
+<mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+  (page)="pageEvent = getServerData($event)">
 </mat-paginator>
