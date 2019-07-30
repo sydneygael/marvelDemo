@@ -1,25 +1,28 @@
-<div *ngIf="pageEvent">
-  <mat-grid-list cols="4" rowHeight = "400px">
-    <mat-grid-tile *ngFor="let pers of personnages">
-      <mat-card  class="example-card">
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>{{pers.name}}</mat-card-title>
-          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image src="{{ getImage(pers)}}" alt="Photo of">
-        <mat-card-content>
-          <p>
-            {{pers.description}}
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button>LIKE</button>
-          <button mat-button>SHARE</button>
-        </mat-card-actions>
-      </mat-card>
-    </mat-grid-tile>
-  </mat-grid-list>
+<div *ngIf="pageEvent" class="container">
+  <div class="row">
+    <!-- bootstrap grid system -->
+
+    <div *ngFor="let pers of personnages" class="col-4 col-md-4" >
+        <mat-card  class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>{{pers.name}}</mat-card-title>
+              <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="{{ getImage(pers)}}" alt="Photo of">
+            <mat-card-content>
+              <p>
+                {{pers.description}}
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button>LIKE</button>
+              <button mat-button>SHARE</button>
+            </mat-card-actions>
+          </mat-card>
+    </div>
+
+  </div>
 </div>
 
 <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"

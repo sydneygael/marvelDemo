@@ -25,6 +25,9 @@ export class CharactersComponent implements OnInit {
   constructor(private api : CharactersService) { }
 
   ngOnInit() {
+    this.pageEvent = new PageEvent();
+    this.pageEvent.pageSize = this.pageSize;
+    this.pageEvent.length = this.length;
     this.getServerData(this.pageEvent);
   }
 
