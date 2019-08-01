@@ -9,7 +9,7 @@ var t = require('tcomb');
 var cors = require('cors');
 
 // Constants
-const PORT = 8080;
+const PORT = process.env.PORT || 3000;
 const HOST = '127.0.0.1';
 const PRIVATE_KEY = '876464b2bf363a5fa994c6980f4610e08d8ab478';
 const PUBLIC_KEY = 'c6b8556a2d08e48a5c46a64c7cf3abeb';
@@ -83,5 +83,5 @@ var readAPI = function (url, port, path, method) {
 	}).end();
 }
 
-app.listen(PORT, HOST);
+app.listen(PORT);
 console.log(`Running on http://${HOST}:${PORT}`);

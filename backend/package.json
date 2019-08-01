@@ -15,5 +15,8 @@
     "request": "^2.88.0",
     "tcomb": "^3.2.29"
   },
+  "engines": {
+    "node": "10.x"
+  },
   "license": "ISC"
 }
