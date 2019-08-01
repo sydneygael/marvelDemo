@@ -1,10 +1,10 @@
 <mat-sidenav-container>
     <mat-sidenav #sidenav role="navigation">
         <mat-nav-list>
-            <a mat-list-item routerLink="/home" (click)="onSidenavClose()">
+            <a mat-list-item routerLink="/home" (click)="sidenav.close()">
                 <mat-icon>home</mat-icon> <span class="nav-caption">Home</span>
             </a>
-            <a mat-list-item routerLink="/characters" (click)="onSidenavClose()">
+            <a mat-list-item routerLink="/characters" (click)="sidenav.close()">
                 <mat-icon>assignment_ind</mat-icon> <span class="nav-caption">Personnages</span>   
             </a>
           </mat-nav-list>
