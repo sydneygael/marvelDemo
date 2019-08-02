@@ -5,10 +5,11 @@ WORKDIR /myangularapp
 COPY . .
 RUN yarn run build --prod --build-optimizer
 ## install ngnix
-FROM nginx:1.13.9-alpine                                  
+FROM nginx:1.13.12-alpine                                 
 ## Remove default nginx website
 RUN rm -rf /usr/share/nginx/html/*
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+COPY ./entrypoint.sh /usr/share/nginx/entrypoint.sh
 COPY --from=builder /myangularapp/dist /usr/share/nginx/html
 CMD sed -i -e 's/$PORT/'"$PORT"'/g' /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'
 CMD ["/bin/sh", "/usr/share/nginx/entrypoint.sh"]
