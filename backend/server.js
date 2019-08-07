@@ -24,7 +24,7 @@ var api = require('./characters')({
 // App
 const app = express();
 
-var allowedOrigins = ['http://localhost:3000','http://localhost:4200'];
+var allowedOrigins = ['http://localhost:3000','http://localhost:4200','https://marvelsydneyfront.herokuapp.com'];
 
 app.use(cors({
 	origin: function(origin, callback){
