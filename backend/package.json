@@ -10,7 +10,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "crypto": "^1.0.1",
-    "express": "^4.16.1",
+    "express": "^4.17.3",
     "q": "^1.5.1",
     "request": "^2.88.0",
     "tcomb": "^3.2.29"
